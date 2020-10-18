@@ -18,7 +18,7 @@ public class Connection {
 			throw new Exception("Key-Value store is not available");
 		}
 		String redisPassword = System.getenv().get("__NIM_REDIS_PASSWORD");
-		if(redisPassword.isEmpty() || redisPassword == null) {
+		if(redisPassword == null || redisPassword.isEmpty()) {
 			throw new Exception("Key-Value store password is not available");
 		}
 		Jedis client = new Jedis(redisHost,6379,300);
