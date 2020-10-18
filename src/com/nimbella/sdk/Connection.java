@@ -14,7 +14,7 @@ public class Connection {
 
 	public static Client redisConnect() throws Exception {
 		String redisHost = System.getenv().get("__NIM_REDIS_IP");
-		if(redisHost.isEmpty() || redisHost == null) {
+		if(redisHost == null || redisHost.isEmpty()) {
 			throw new Exception("Key-Value store is not available");
 		}
 		String redisPassword = System.getenv().get("__NIM_REDIS_PASSWORD");
